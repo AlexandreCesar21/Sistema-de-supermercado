@@ -30,7 +30,14 @@ header h2 {
     text-shadow: 1px 1px 2px black;
 }
 
-section {
+.duas {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.caixa1 {
     background-color: rgb(204, 248, 248);
     border-radius: 10px;
     width: 200px;
@@ -38,6 +45,16 @@ section {
     margin-top: 15px;
     margin-left: 15px;
     box-shadow: 2px 2px 2px black;
+}
+
+.saida {
+    border-radius: 10px;
+    background-color: #CFE2FF;
+    width: 300px;
+    height: 150px;
+    margin: 100px;
+    padding: 15px;
+    margin-left: auto;
 }
 
 label {
@@ -63,10 +80,12 @@ select {
     margin-left: 20px;
 }
 
+
 .titulo1 {
     text-align: center;
     align-items: center;
     justify-content: center;
     margin-left: 100px;
-    
 }
+
+
