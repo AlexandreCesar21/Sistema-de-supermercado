@@ -29,3 +29,44 @@ header h2 {
     color: rgb(255, 183, 0);
     text-shadow: 1px 1px 2px black;
 }
+
+section {
+    background-color: rgb(204, 248, 248);
+    border-radius: 10px;
+    width: 200px;
+    height: 300px;
+    margin-top: 15px;
+    margin-left: 15px;
+    box-shadow: 2px 2px 2px black;
+}
+
+label {
+    padding: 25px;
+}
+
+input {
+    padding: 25px;
+    font-size: 2em;
+    width: 20px;
+    height: 5px;
+    margin-left: 5px;
+}
+
+.titulo {
+    margin-left: 5px;
+    font-weight: bolder;
+}
+
+select {
+    width: 150px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.titulo1 {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 100px;
+    
+}
