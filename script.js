@@ -12,7 +12,7 @@ function isNumero(n){
 function inLista(n, l) {
     return l.indexOf(Number(n)) !== -1;
 }
-
+/*
 function adicionar() {   
     valores.push(Number(num.value))
     let item = document.createElement('option')
@@ -21,7 +21,20 @@ function adicionar() {
     
     num.value = ''
     num.focus()
+}*/
+function adicionar() {
+    let numericValue = parseFloat(num.value.replace(/[^\d.,]/g, "").replace(',', '.'));
+    if (!isNaN(numericValue)) {
+        valores.push(numericValue);
+        let item = document.createElement('option');
+        item.text = `R$ ${numericValue.toFixed(2)} foi adicionado`; // Include "R$" prefix here
+        resu.appendChild(item);
+
+        num.value = '';
+        num.focus();
+    }
 }
+
 /*
 function formatapreco() {
     let input = document.getElementById("fnum")
@@ -38,14 +51,16 @@ function formatapreco() {
     if (!isNaN(numericValue)) {
         num.value = `R$ ${numericValue.toFixed(2)}`; // Add "R$" and display the formatted price
     }
+
 }
-
-
 
 function calcularTotal() {
     let total2 = 0;
     for (let i = 0; i < valores.length; i++) {
         total2 += valores[i];
     }
-    totalDiv.textContent = `R$ ${(total2 / 100).toFixed(2)}`;
+    totalDiv.textContent = `R$ ${total2.toFixed(2)}`;
 }
+
+
+
