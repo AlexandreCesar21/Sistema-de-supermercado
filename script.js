@@ -5,29 +5,15 @@ let resu = document.querySelector("#resu")
 let totalDiv = document.getElementById("totalValue")
 let valores = []
 
-function isNumero(n){
-    return Number(n) >= 0 && Number(n) <= 100;
-}
 
-function inLista(n, l) {
-    return l.indexOf(Number(n)) !== -1;
-}
-/*
-function adicionar() {   
-    valores.push(Number(num.value))
-    let item = document.createElement('option')
-    item.text = num.value + " foi adicionado"
-    resu.appendChild(item)
-    
-    num.value = ''
-    num.focus()
-}*/
+
+
 function adicionar() {
     let numericValue = parseFloat(num.value.replace(/[^\d.,]/g, "").replace(',', '.'));
     if (!isNaN(numericValue)) {
         valores.push(numericValue);
         let item = document.createElement('option');
-        item.text = `R$ ${numericValue.toFixed(2)} foi adicionado`; // Include "R$" prefix here
+        item.text = `R$ ${numericValue.toFixed(2)} foi adicionado`; 
         resu.appendChild(item);
 
         num.value = '';
@@ -35,21 +21,14 @@ function adicionar() {
     }
 }
 
-/*
-function formatapreco() {
-    let input = document.getElementById("fnum")
-    let preco = input.value.replace(/\D/g, "")
-    preco = (preco / 100).toFixed(2)
-    input.value = `R$ ${preco}`
-    
-}*/
+
 
 
 function formatapreco() {
-    let preco = num.value.replace(/[^\d.,]/g, ""); // Remove all non-numeric characters except dots and commas
-    let numericValue = parseFloat(preco.replace(',', '.')); // Replace commas with dots and convert to a float
+    let preco = num.value.replace(/[^\d.,]/g, ""); 
+    let numericValue = parseFloat(preco.replace(',', '.')); 
     if (!isNaN(numericValue)) {
-        num.value = `R$ ${numericValue.toFixed(2)}`; // Add "R$" and display the formatted price
+        num.value = `R$ ${numericValue.toFixed(2)}`; 
     }
 
 }
@@ -62,5 +41,12 @@ function calcularTotal() {
     totalDiv.textContent = `R$ ${total2.toFixed(2)}`;
 }
 
-
+function calcularTroco() {
+    let totalValue = parseFloat(totalDiv.textContent.replace(/[^\d.,]/g, "").replace(',', '.'));
+    let receivedValue = parseFloat(document.getElementById("rece").value);
+    let trocoValue = receivedValue - totalValue;
+    
+    let trocoDiv = document.getElementById("trocado1");
+    trocoDiv.textContent = `R$ ${trocoValue.toFixed(2)}`;
+}
 
