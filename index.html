@@ -16,10 +16,10 @@
         <div class="caixa1">
             <br>
             <label for="Preco" class="titulo">Adicione o preço:</label>
-            <br><br><input type="number" style="width: 130px;">
-            <button>Adicionar</button>
-            <br><br><label for="sai" class="titulo">Saida de preços:</label><br><br><select name="resu" id="resu"></select>
-            <button>TOTAL</button>
+            <br><br><input type="text" style="width: 130px;" id="fnum" oninput="formatapreco()">
+            <button onclick="adicionar()">Adicionar</button>
+            <br><br><label for="sai" class="titulo">Saida de preços:</label><br><br><select name="resu" id="resu" size="6"></select>
+            <button onclick="total1()">TOTAL</button>
         </div>
         <div class="saida">           
             <h1 class="titulo1">Total de compras</h1>
@@ -50,4 +50,5 @@
     
     
 </body>
+<script src="script.js"></script>
 </html>
